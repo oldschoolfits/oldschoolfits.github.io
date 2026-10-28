@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Shop every outfit from the oldschool.fits Reels on Amazon UK.">
+<title>oldschool.fits Shop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@400;600;700&display=swap">
+<style>
+/* layout: single phone-width column, one card per outfit, tap-friendly rows; deliberate dark VHS-shop look */
+:root{
+  --bg:#15131b; --panel:#1f1c27; --line:#2f2b3a; --fg:#f2ede4; --muted:#a59fb3;
+  --pink:#ff4fa3; --cyan:#3fd0d6; --sun:#ffb341;
+  --display:"Bungee","Arial Black",Impact,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px}
+.handle{font-family:var(--display);font-size:clamp(28px,8vw,40px);line-height:1;letter-spacing:.5px;
+  background:linear-gradient(180deg,var(--sun) 0%,var(--pink) 60%,#b44dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--muted);margin:0}
+.disc{font-size:13px;color:var(--muted);border-left:3px solid var(--cyan);padding:6px 0 6px 12px;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav a{font-size:13px;font-weight:600;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+nav a:hover,nav a:focus-visible{border-color:var(--pink);outline:none}
+h2{font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:1px;color:var(--cyan);margin:0;text-wrap:balance}
+.drop{display:flex;flex-direction:column;gap:14px}
+.fit{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.fit h3{margin:0;padding:12px 16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
+.fit h3 span{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
+.fit ul{list-style:none;margin:0;padding:0}
+.fit li+li{border-top:1px solid var(--line)}
+.fit a{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:12px 16px;color:var(--fg);text-decoration:none;min-height:52px}
+.fit a:hover,.fit a:focus-visible{background:#272333;outline:none}
+.kind{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--sun)}
+.name{min-width:0;font-size:15px}
+.go{font-size:13px;font-weight:700;color:var(--pink);white-space:nowrap}
+footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:no-preference){.fit a{transition:background .15s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="handle">oldschool.fits</div>
+    <p class="tag">Every piece from the Reels, straight to Amazon UK.</p>
+    <p class="disc">#ad · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
+    <nav aria-label="Jump to a drop"><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a></nav>
+  </header>
+
+  <section class="drop" id="decades">
+    <h2>Fit Drop 1 · 4 Decades</h2>
+    <div id="d1"></div>
+  </section>
+
+  <section class="drop" id="brands">
+    <h2>Fit Drop 2 · Adidas, Nike or neither?</h2>
+    <div id="d2"></div>
+  </section>
+
+  <footer>
+    <span>Presenter in the videos is an AI version of me.</span>
+    <span>Links open Amazon.co.uk.</span>
+  </footer>
+</div>
+
+<script>
+const TAG = "oldschoolfits-21";
+const D1 = [
+  ["1 · 70s", [["Jacket","KEFITEVD Corduroy Sherpa Lined Jacket","B0BMKRNZWR"],["Top","COOFANDY Turtleneck Knit Jumper, Dark Brown","B0H9SDW6PB"],["Trousers","Cord Trousers","B00N1WU26G"],["Shoes","Bruno Marc Chelsea Boots, Tan","B06XTW4S3N"]]],
+  ["2 · 80s", [["Jacket","Agora Vanquish Windbreaker, Multi-colour","B07BLKWLK1"],["Top","Amazon Essentials Cable Knit Jumper, Off-White","B08617NXYP"],["Trousers","Straight Leg Jeans, Light Wash","B0H2QZKTR1"],["Shoes","Nike Court Vision Mid, White","B07RHQC2NY"]]],
+  ["3 · 90s", [["Jacket","Mountain Warehouse Padded Puffer","B0CLWQ2SLV"],["Top","Oversized Hoodie, Grey","B0CJ2Q5Y6P"],["Trousers","Wrangler Relaxed Cargo","B0887T4PT7"],["Shoes","Skechers Stamina Cutback","B0037UZATG"]]],
+  ["4 · 00s", [["Jacket","AWDis Varsity Jacket","B01N19ML9I"],["Top","Fruit of the Loom White Tee","B00UXFZFGG"],["Trousers","Jack & Jones Alex Baggy Jeans","B0BFJVY5Z8"],["Shoes","adidas Grand Court Base 00s","B0D3XF2XT1"]]]
+];
+const D2 = [
+  ["1 · Adidas", [["Jacket","adidas Originals Firebird Track Top, Black","B087QBJXF1"],["Top","Fruit of the Loom White Tee","B00UXFZFGG"],["Trousers","adidas Originals Firebird Track Pants","B07ZGGN3S3"],["Shoes","adidas Samba OG","B079YWT9NW"]]],
+  ["2 · Nike", [["Jacket","Nike Tech Fleece Windrunner","B0CHFXZ15N"],["Top","Fruit of the Loom White Tee","B00UXFZFGG"],["Trousers","Nike Tech Fleece Joggers, Black","B0C9R6QX6R"],["Shoes","Nike Air Force 1 '07, White","B001NGIYFI"]]],
+  ["3 · Outdoor", [["Gilet","Mountain Warehouse Puffer Gilet, Black","B0BGMT927L"],["Top","Columbia Steens Mountain Half Zip Fleece","B0BKQXGTGW"],["Trousers","Jack & Jones Cargo Trousers","B0CL7N131X"],["Shoes","Salomon Speedcross","B0C46JZH49"]]],
+  ["4 · 2026 minimal", [["Jacket","Fleece-Lined Corduroy Shacket, Khaki","B0FMNV5171"],["Top","COOFANDY Crew Neck Jumper, Light Grey","B0D31F8QZB"],["Trousers","Pleated Wide Leg Trousers","B0FN3YRXFY"],["Shoes","New Balance 530","B09VPNBCLS"]]]
+];
+function render(id, fits){
+  const box = document.getElementById(id);
+  box.style.display = "flex"; box.style.flexDirection = "column"; box.style.gap = "14px";
+  for (const [title, items] of fits){
+    const card = document.createElement("article"); card.className = "fit";
+    const [num, label] = title.split(" · ");
+    card.innerHTML = `<h3>${label}<span>Comment ${num}</span></h3><ul></ul>`;
+    const ul = card.querySelector("ul");
+    for (const [kind, name, asin] of items){
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `https://www.amazon.co.uk/dp/${asin}?tag=${TAG}`;
+      a.target = "_blank"; a.rel = "sponsored noopener";
+      a.innerHTML = `<span class="kind">${kind}</span><span class="name"></span><span class="go">Shop →</span>`;
+      a.querySelector(".name").textContent = name;
+      li.appendChild(a); ul.appendChild(li);
+    }
+    box.appendChild(card);
+  }
+}
+render("d1", D1); render("d2", D2);
+</script>
+
+</body>
+</html>
