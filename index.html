@@ -51,7 +51,7 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <div class="handle">oldschool.fits</div>
     <p class="tag">Every piece from the Reels, straight to Amazon UK.</p>
     <p class="disc">#ad · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
-    <nav aria-label="Jump to a drop"><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a></nav>
+    <nav aria-label="Jump to a drop"><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
   </header>
 
   <section class="drop" id="decades">
@@ -72,6 +72,11 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
   <section class="drop" id="budget">
     <h2>Fit Drop 4 · £50 vs £200</h2>
     <div id="d4"></div>
+  </section>
+
+  <section class="drop" id="oldmoney">
+    <h2>Fit Drop 5 · Old money fits</h2>
+    <div id="d5"></div>
   </section>
 
   <footer>
@@ -106,6 +111,12 @@ const D4 = [
   ["3 · £150", [["Jacket","Padded Country Wax Jacket, Olive","B079JYSNZ7"],["Top","Calvin Klein Half-Zip Jumper, Charcoal","B0CJM7NCG2"],["Trousers","Amazon Essentials Slim Chinos, Stone","B07BJL2VS3"],["Shoes","Bruno Marc Suede Chukka Boots, Dark Brown","B015EW2MH2"]]],
   ["4 · £200", [["Jacket","Columbia Powder Lite II Puffer","B0GFNP6KF8"],["Top","Champion Hoodie, Navy","B078H7WKN9"],["Trousers","Levi's 501 Original Fit Jeans","B001GT1WAG"],["Shoes","New Balance 574, Black","B093QLRTJY"]]]
 ];
+const D5 = [
+  ["1 · Camel & Navy", [["Jacket","A1 Fashion Goods Real Suede Bomber, Tan","B096STJLPM"],["Top","COOFANDY Knitted Polo Jumper, Cream","B0D5BC5N9F"],["Trousers","Amazon Essentials Slim-Fit Chino, Navy","B07BJL6XWB"],["Shoes","Suede Penny Loafers, Brown","B07KM2R762"]]],
+  ["2 · Leather & Denim", [["Jacket","Infinity Leather Trucker Jacket, Brown","B09H5CKWRY"],["Top","Fruit of the Loom Heavy T-Shirt, Black","B0074847KK"],["Trousers","Jack & Jones Glenn Original Jeans","B0D17CK1TL"],["Shoes","Bruno Marc Leather Chelsea Boots, Tan","B06XTHMLMG"]]],
+  ["3 · Old Money", [["Jacket","PJ Paul Jones Wool Tweed Blazer","B0D9VHF285"],["Top","COOFANDY Ribbed Knit Polo, Olive","B0DJZL3LC7"],["Trousers","Amazon Essentials Pleated Chino, Stone","B01N4P8TR9"],["Shoes","Bruno Marc Penny Loafers, Tan","B0G65C28VW"]]],
+  ["4 · City Winter", [["Coat","Amazon Essentials Double-Breasted Wool-Blend Coat, Charcoal","B0FF5DQCC2"],["Top","Jack & Jones Emil Roll Neck, Black","B07VGZHJ1R"],["Trousers","Amazon Essentials Slim Dress Trousers, Dark Grey","B096YRY6LL"],["Shoes","adidas Urban Court, White","B0CDQD3H1D"]]]
+];
 function render(id, fits){
   const box = document.getElementById(id);
   box.style.display = "flex"; box.style.flexDirection = "column"; box.style.gap = "14px";
@@ -126,7 +137,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5);
 </script>
 
 </body>
