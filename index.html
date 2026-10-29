@@ -51,7 +51,7 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <div class="handle">oldschool.fits</div>
     <p class="tag">Every piece from the Reels, straight to Amazon UK.</p>
     <p class="disc">#ad · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
-    <nav aria-label="Jump to a drop"><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a></nav>
+    <nav aria-label="Jump to a drop"><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a></nav>
   </header>
 
   <section class="drop" id="decades">
@@ -62,6 +62,16 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
   <section class="drop" id="brands">
     <h2>Fit Drop 2 · Adidas, Nike or neither?</h2>
     <div id="d2"></div>
+  </section>
+
+  <section class="drop" id="work">
+    <h2>Fit Drop 3 · Workwear or streetwear?</h2>
+    <div id="d3"></div>
+  </section>
+
+  <section class="drop" id="budget">
+    <h2>Fit Drop 4 · £50 vs £200</h2>
+    <div id="d4"></div>
   </section>
 
   <footer>
@@ -84,6 +94,18 @@ const D2 = [
   ["3 · Outdoor", [["Gilet","Mountain Warehouse Puffer Gilet, Black","B0BGMT927L"],["Top","Columbia Steens Mountain Half Zip Fleece","B0BKQXGTGW"],["Trousers","Jack & Jones Cargo Trousers","B0CL7N131X"],["Shoes","Salomon Speedcross","B0C46JZH49"]]],
   ["4 · 2026 minimal", [["Jacket","Fleece-Lined Corduroy Shacket, Khaki","B0FMNV5171"],["Top","COOFANDY Crew Neck Jumper, Light Grey","B0D31F8QZB"],["Trousers","Pleated Wide Leg Trousers","B0FN3YRXFY"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
+const D3 = [
+  ["1 · The Site", [["Jacket","Carhartt Loose Fit Washed Duck Insulated Active Jacket, Brown","B07S3HHHF9"],["Top","Carhartt K87 Heavyweight Pocket T-Shirt, Carbon Heather","B0BDL6RFMZ"],["Trousers","Carhartt Stretch Duck Double Front Work Pants","B07WGPY7B8"],["Shoes","Timberland 6\" Premium Waterproof Boot, Wheat","B0CPSK44LL"]]],
+  ["2 · Dickies", [["Jacket","Dickies Eisenhower Jacket, Dark Navy","B0D52N79B6"],["Top","Dickies Long Sleeve Work Shirt, Black","B000N8TFDW"],["Trousers","Dickies Original 874 Work Pants, Khaki","B0D368X8V2"],["Shoes","Dr. Martens 1460 Smooth, Black","B000BNTRKA"]]],
+  ["3 · Trucker", [["Jacket","Levi's Type 3 Sherpa Trucker Jacket","B07ZVPPKZS"],["Top","Amazon Essentials Pullover Hoodie, Black","B075JNL9T3"],["Trousers","Amazon Essentials Stretch Cargo Work Trousers, Black","B07F2B488L"],["Shoes","Timberland Flume Waterproof Boot, Brown","B0CPSQ21R7"]]],
+  ["4 · Street", [["Jacket","The North Face Saikuru Jacket, Black","B0CCSKGV8W"],["Top","Nike Club Fleece Hoodie, Grey","B0DPGMNTWR"],["Trousers","Nike Club Cargo Pants, Black","B07L7S8JY3"],["Shoes","New Balance 9060","B0BSQZ4MJB"],["Mask","Achiou Balaclava Ski Mask, Black","B07PFGMG5F"]]]
+];
+const D4 = [
+  ["1 · £50", [["Jacket","True Face Hooded Puffer Jacket, Black","B0D481D215"],["Top","Fruit of the Loom White Tee","B00UXFZFGG"],["Trousers","Fleece Cuffed Joggers, Black","B0DJ37JWWZ"],["Shoes","Slip-On Knit Trainers, Black","B09M7NHDMB"],["Mask","Achiou Balaclava, Black","B07PFGMG5F"]]],
+  ["2 · £100", [["Jacket","Jack & Jones Hero Puffer Jacket","B0B5Y4Z6GB"],["Top","Regatta Thompson Half-Zip Fleece, Black","B003AOAEW2"],["Trousers","Amazon Essentials Straight-Fit Jeans, Black","B07BJKTXVL"],["Shoes","Vans Ward, Black/Black","B0721ZS4YT"]]],
+  ["3 · £150", [["Jacket","Padded Country Wax Jacket, Olive","B079JYSNZ7"],["Top","Calvin Klein Half-Zip Jumper, Charcoal","B0CJM7NCG2"],["Trousers","Amazon Essentials Slim Chinos, Stone","B07BJL2VS3"],["Shoes","Bruno Marc Suede Chukka Boots, Dark Brown","B015EW2MH2"]]],
+  ["4 · £200", [["Jacket","Columbia Powder Lite II Puffer","B0GFNP6KF8"],["Top","Champion Hoodie, Navy","B078H7WKN9"],["Trousers","Levi's 501 Original Fit Jeans","B001GT1WAG"],["Shoes","New Balance 574, Black","B093QLRTJY"]]]
+];
 function render(id, fits){
   const box = document.getElementById(id);
   box.style.display = "flex"; box.style.flexDirection = "column"; box.style.gap = "14px";
@@ -104,7 +126,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4);
 </script>
 
 </body>
