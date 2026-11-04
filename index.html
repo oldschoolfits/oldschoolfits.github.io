@@ -51,8 +51,13 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <div class="handle">oldschool.fits</div>
     <p class="tag">Every piece from the Reels, straight to Amazon UK.</p>
     <p class="disc">#ad · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
-    <nav aria-label="Jump to a drop"><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
+    <nav aria-label="Jump to a drop"><a href="#cargos">1 pair of cargos = 10 fits</a><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
   </header>
+
+  <section class="drop" id="cargos">
+    <h2>1 pair of cargos = 10 fits</h2>
+    <div id="d7"></div>
+  </section>
 
   <section class="drop" id="bonfire">
     <h2>Fit Drop 6 · Bonfire Night</h2>
@@ -128,6 +133,18 @@ const D6 = [
   ["3 · Puffer & Flannel", [["Jacket","Spindle Padded Quilted Puffer Jacket, Black","B0FWVC3FW8"],["Top","siliteelon Flannel Check Shirt, Red/Black","B07TBN37K6"],["Trousers","Amazon Essentials Slim Chinos, Stone","B07BJL2VS3"],["Shoes","Timberland Flume Waterproof Boot, Brown","B0CPSQ21R7"]]],
   ["4 · Teddy Fleece", [["Jacket","Tokyo Laundry Wafai Zip Hooded Teddy Fleece, Ecru","B0CKZJCQYC"],["Top","Fruit of the Loom Heavy T-Shirt, Black","B0074847KK"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
+const D7 = [
+  ["white · White tee", [["Top","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["red · Flannel", [["Top","siliteelon Flannel Check Shirt, Red/Black","B07TBN37K6"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["cream · Knit polo", [["Top","COOFANDY Knitted Polo Jumper, Cream","B0D5BC5N9F"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["navy · Hoodie", [["Top","Champion Hoodie, Navy","B078H7WKN9"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["sage · Knit polo", [["Top","COOFANDY Ribbed Knit Polo, Sage","B0DJZL3LC7"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["charcoal · Half-zip", [["Top","Calvin Klein Half-Zip Jumper, Charcoal","B0CJM7NCG2"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["off-white · Cable knit", [["Top","Amazon Essentials Fisherman Cable Jumper, Off-White","B08617NXYP"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["black · Work shirt", [["Top","Dickies Long Sleeve Work Shirt, Black","B000N8TFDW"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["brown · Turtleneck", [["Top","COOFANDY Ribbed Turtleneck, Dark Brown","B0H9SDW6PB"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["grey · Pocket tee", [["Top","Carhartt K87 Pocket T-Shirt, Carbon Heather","B0BDL6RFMZ"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
+];
 function render(id, fits){
   const box = document.getElementById(id);
   box.style.display = "flex"; box.style.flexDirection = "column"; box.style.gap = "14px";
@@ -148,7 +165,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7);
 </script>
 
 </body>
