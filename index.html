@@ -54,6 +54,11 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <nav aria-label="Jump to a drop"><a href="#weather">12 fits · British weather</a><a href="#cargos">1 pair of cargos = 10 fits</a><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
   </header>
 
+  <section class="drop" id="jackets">
+    <h2>Same cargos · 7 jackets</h2>
+    <div id="d9"></div>
+  </section>
+
   <section class="drop" id="weather">
     <h2>1 pair of cargos · 12 fits for British weather</h2>
     <div id="d8"></div>
@@ -150,6 +155,15 @@ const D7 = [
   ["brown · Turtleneck", [["Top","COOFANDY Ribbed Turtleneck, Dark Brown","B0H9SDW6PB"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
   ["grey · Pocket tee", [["Top","Carhartt K87 Pocket T-Shirt, Carbon Heather","B0BDL6RFMZ"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
+const D9 = [
+  ["1 · Tan leather trucker", [["Jacket","fjackets Lambskin Leather Trucker Jacket, Tan","B08SBMBLRX"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["2 · Olive waxed jacket", [["Jacket","Padded Country Wax Jacket, Olive","B079JYSNZ7"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["3 · Black puffer", [["Jacket","Spindle Padded Quilted Puffer Jacket, Black","B0FWVC3FW8"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["4 · Black sherpa trucker", [["Jacket","MAGCOMSEN Sherpa-Lined Trucker Jacket, Black","B09M8Z9S6X"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["5 · Brown leather bomber", [["Jacket","Vintage Waxed Lambskin Leather Bomber, Brown","B0FDT6GD46"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["6 · Black leather jacket", [["Jacket","DECIMAL B31 Leather Jacket, Black","B09FW5N41Y"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
+  ["7 · Brown aviator", [["Jacket","Leatherick Brown Leather Aviator Jacket, Shearling Style","B09JGNNF9D"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
+];
 const D8 = [
   ["1 · Crisp and sunny", [["Jacket","fjackets Lambskin Leather Trucker Jacket, Tan","B08SBMBLRX"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
   ["2 · Cold morning", [["Top","COOFANDY Ribbed Turtleneck, Dark Brown","B0H9SDW6PB"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
@@ -184,7 +198,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9);
 </script>
 
 </body>
