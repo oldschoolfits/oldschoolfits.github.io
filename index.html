@@ -54,6 +54,11 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <nav aria-label="Jump to a drop"><a href="#weather">12 fits · British weather</a><a href="#cargos">1 pair of cargos = 10 fits</a><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
   </header>
 
+  <section class="drop" id="bf">
+    <h2>Black Friday watchlist</h2>
+    <div id="d12"></div>
+  </section>
+
   <section class="drop" id="road">
     <h2>Italian style · Dutch roads</h2>
     <div id="d11"></div>
@@ -165,6 +170,9 @@ const D7 = [
   ["brown · Turtleneck", [["Top","COOFANDY Ribbed Turtleneck, Dark Brown","B0H9SDW6PB"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
   ["grey · Pocket tee", [["Top","Carhartt K87 Pocket T-Shirt, Carbon Heather","B0BDL6RFMZ"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
+const D12 = [
+  ["6 old money pieces to watch", [["Roll neck","JACK & JONES Plain Turtleneck","B0CL7XTY91"],["Coat","Amazon Essentials Double-Breasted Wool-Blend Long Coat","B0FF5DQCC2"],["Boots","Bruno Marc Suede Chelsea Boots","B06XTW537T"],["Loafers","Bruno Marc Penny Loafers","B0C6QW5RHR"],["Scarf","Lallier Merino Wool Scarf","B08HN54Z1X"],["Gloves","Hand Fellow Nappa Leather Gloves, Black","B07HWRF7Q7"]]]
+];
 const D11 = [
   ["The full look", [["Shoes","Bruno Marc Cap-Toe Lace-Up Derby, Dark Brown","B010TZ0FDW"],["Coat","COOFANDY Wool Blend Overcoat, Camel","B0D9B5TZDD"],["Suit","HANBANGWEI Double Breasted 2 Piece Suit, Coffee","B0DNF8G6BM"],["Shirt","J.VER Stretch Dress Shirt, White","B09M872C1M"],["Tie","HISDERN Gold Paisley Tie + Pocket Square","B0B3SZ2973"],["Gloves","Nappa Leather Gloves, Black","B07HWRF7Q7"]]]
 ];
@@ -216,7 +224,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9); render("d10", D10); render("d11", D11);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9); render("d10", D10); render("d11", D11); render("d12", D12);
 </script>
 
 </body>
