@@ -54,6 +54,11 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:
     <nav aria-label="Jump to a drop"><a href="#weather">12 fits · British weather</a><a href="#cargos">1 pair of cargos = 10 fits</a><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
   </header>
 
+  <section class="drop" id="walk">
+    <h2>7 old money fits · the walk</h2>
+    <div id="d14"></div>
+  </section>
+
   <section class="drop" id="mate">
     <h2>Old money vs velour · me and my mate</h2>
     <div id="d13"></div>
@@ -175,6 +180,16 @@ const D7 = [
   ["brown · Turtleneck", [["Top","COOFANDY Ribbed Turtleneck, Dark Brown","B0H9SDW6PB"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
   ["grey · Pocket tee", [["Top","Carhartt K87 Pocket T-Shirt, Carbon Heather","B0BDL6RFMZ"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
+const D14 = [
+  ["01 · Camel coat + fedora", [["Coat","COOFANDY Wool Blend Overcoat, Camel","B0D9B5TZDD"],["Suit","HANBANGWEI Double Breasted Suit, Champagne","B0D48K4K3S"],["Roll neck","JACK & JONES Roll Neck","B0CL7XTY91"],["Fedora","Hand Made Wool Felt Fedora, Brown","B08BTVMS75"],["Loafers","Bruno Marc Penny Loafers","B0C6QW5RHR"]]],
+  ["02 · Quarter-zip + tie", [["Quarter-zip","COOFANDY Quarter Zip Knit, Army Green","B0FD9FDSBQ"],["Shirt","J.VER Oxford Shirt, Light Blue","B0BN632XR4"],["Loafers","Amazon Essentials Tassel Loafer, Black","B0GMJC99BB"]]],
+  ["03 · Charcoal coat + grey knit", [["Coat","Allthemen Stand Collar Wool Blend Coat (pick charcoal)","B0C85FWMCS"],["Jumper","COOFANDY Crew Neck Jumper, Light Grey","B0D31F8QZB"],["Trousers","Amazon Essentials Slim Dress Trousers, Grey","B096YRY6LL"],["Loafers","Bruno Marc Penny Loafers (pick black)","B0C6QW5RHR"]]],
+  ["04 · Navy blazer + roll neck", [["Blazer","Allthemen Slim Fit Blazer, Dark Blue","B0F174XZDY"],["Roll neck","JACK & JONES Roll Neck","B0CL7XTY91"],["Trousers","FEDTOSING Pleated Wide-Leg Trousers","B0FN3ZZ41S"],["Loafers","Thomas Crick Leather Tassel Loafers","B0DNVWGYM5"]]],
+  ["05 · Plum tee + taupe pleats", [["T-shirt","Fruit of the Loom Super Premium T-Shirt (plum/brown)","B00UXG2GFS"],["Trousers","FEDTOSING Pleated Wide-Leg Trousers","B0F83PLVY2"],["Loafers","Amazon Essentials Tassel Loafer, Black","B0GMJC99BB"]]],
+  ["06 · Italian chalk-stripe suit", [["Suit","UNINUKOO Pinstripe Double Breasted Suit","B0CMD52XB4"],["Shirt","J.VER Stretch Dress Shirt, Black","B09M87ZKS1"],["Overcoat","Amazon Essentials Double-Breasted Long Coat, Black","B0FF5DPHT9"],["Fedora","Hand Made Wool Felt Fedora, Black","B08BTS4QGL"],["Gloves","Hand Fellow Nappa Leather Gloves","B07HWRF7Q7"],["Shoes","Bruno Marc Oxford Shoes, Black","B010TYZH6S"]]],
+  ["07 · Leather trench + roll neck", [["Coat","ZM ATTIRE Dark Brown Leather Trench Coat","B0FVWD3C6B"],["Roll neck","JACK & JONES Roll Neck (pick camel)","B0CL7XTY91"],["Trousers","FEDTOSING Pleated Wide-Leg Trousers (pick dark brown)","B0FN3ZZ41S"],["Boots","Bruno Marc Leather Chelsea Boots (pick dark brown)","B06XTVLM2H"]]],
+  ["At home · lounge set", [["Lounge set","JMIERR 2 Piece Textured Lounge Set, Khaki","B0FS1CZK44"],["Slippers","Mokkers Suede Moccasin Slippers","B003JFYFD6"]]]
+];
 const D13 = [
   ["Me · old money", [["Suit","HANBANGWEI Double Breasted 2 Piece Suit, Coffee","B0DNF8G6BM"],["Shirt","J.VER Stretch Dress Shirt, White","B09M872C1M"],["Tie","HISDERN Gold Paisley Tie + Pocket Square","B0B3SZ2973"],["Shoes","Bruno Marc Cap-Toe Lace-Up Derby, Dark Brown","B010TZ0FDW"]]],
   ["My mate · velour", [["Tracksuit","Men's 2 Piece Velour Tracksuit, Yellow","B0DT6JDXYN"],["Tracksuit (brown)","Men's 2 Piece Velour Tracksuit, Brown","B0FPM6P9Y4"]]]
@@ -233,7 +248,7 @@ function render(id, fits){
     box.appendChild(card);
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9); render("d10", D10); render("d11", D11); render("d12", D12); render("d13", D13);
+render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9); render("d10", D10); render("d11", D11); render("d12", D12); render("d13", D13); render("d14", D14);
 </script>
 
 </body>
