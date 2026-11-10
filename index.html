@@ -3,135 +3,192 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Shop every outfit from the oldschool.fits Reels on Amazon UK.">
+<meta name="description" content="Shop every outfit from the oldschool.fits Reels on Amazon UK, sorted by reel, by piece and by style.">
+<meta name="theme-color" content="#151c33">
 <title>oldschool.fits Shop</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@400;600;700&display=swap">
+<meta property="og:title" content="oldschool.fits · Shop the Reels">
+<meta property="og:description" content="Every piece from the Reels, on Amazon UK. Sorted by reel, by piece and by style.">
+<meta property="og:image" content="https://oldschoolfits.github.io/img/d14.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23151c33%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2734%27 font-style=%27italic%27 font-weight=%27700%27 fill=%27%23c9a467%27 text-anchor=%27middle%27%3Eof%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Jost:wght@400;500;600&display=swap">
 <style>
-/* layout: single phone-width column, one card per outfit, tap-friendly rows; deliberate dark VHS-shop look */
+/* layout: a tailor's ledger. Navy masthead, ivory pages, gold hairlines; reels as chapters, pieces as a sorted wardrobe */
 :root{
-  --bg:#15131b; --panel:#1f1c27; --line:#2f2b3a; --fg:#f2ede4; --muted:#a59fb3;
-  --pink:#ff4fa3; --cyan:#3fd0d6; --sun:#ffb341;
-  --display:"Bungee","Arial Black",Impact,sans-serif;
-  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  color-scheme:dark;
+  --navy:#151c33; --navy-2:#1f2847; --ivory:#f5f0e6; --paper:#fbf8f2; --ink:#1b2036; --muted:#6c6a70;
+  --gold:#a77b3c; --gold-l:#c9a467; --line:#e2d8c6;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Jost","Futura","Avenir Next","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.45;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
-.wrap{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
-header{display:flex;flex-direction:column;gap:10px}
-.handle{font-family:var(--display);font-size:clamp(28px,8vw,40px);line-height:1;letter-spacing:.5px;
-  background:linear-gradient(180deg,var(--sun) 0%,var(--pink) 60%,#b44dff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.tag{color:var(--muted);margin:0}
-.disc{font-size:13px;color:var(--muted);border-left:3px solid var(--cyan);padding:6px 0 6px 12px;margin:0}
-nav{display:flex;flex-wrap:wrap;gap:8px}
-nav a{font-size:13px;font-weight:600;color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
-nav a:hover,nav a:focus-visible{border-color:var(--pink);outline:none}
-h2{font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:1px;color:var(--cyan);margin:0;text-wrap:balance}
-.drop{display:flex;flex-direction:column;gap:14px}
-.fit{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.fit h3{margin:0;padding:12px 16px;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
-.fit h3 span{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
-.fit ul{list-style:none;margin:0;padding:0}
-.fit li+li{border-top:1px solid var(--line)}
-.fit a{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:12px 16px;color:var(--fg);text-decoration:none;min-height:52px}
-.fit a:hover,.fit a:focus-visible{background:#272333;outline:none}
-.kind{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--sun)}
-.name{min-width:0;font-size:15px}
-.go{font-size:13px;font-weight:700;color:var(--pink);white-space:nowrap}
-footer{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
-@media (prefers-reduced-motion:no-preference){.fit a{transition:background .15s}}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:120px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.num{font-family:var(--display);font-variant-numeric:lining-nums tabular-nums}
+.caps{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
+
+/* masthead */
+.mast{background:var(--navy);color:var(--ivory);padding:44px max(18px,env(safe-area-inset-left)) 36px;text-align:center;position:relative;overflow:hidden}
+.mast::before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,164,103,.35);pointer-events:none}
+.mast .eyebrow{color:var(--gold-l)}
+.logo{font-family:var(--display);font-weight:800;font-size:clamp(34px,10.5vw,64px);line-height:1;margin:14px 0 0;letter-spacing:-.01em;font-variant-numeric:lining-nums}
+.logo i{font-weight:700;color:var(--gold-l);margin-left:.06em}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto 16px;color:var(--gold-l)}
+.orn::before,.orn::after{content:"";width:72px;height:1px;background:currentColor;opacity:.7}
+.orn span{width:8px;height:8px;transform:rotate(45deg);background:currentColor}
+.mast .lede{font-family:var(--display);font-style:italic;font-size:18px;text-wrap:balance;margin:0;color:#e9e2d4}
+.stats{display:flex;justify-content:center;gap:22px;margin:22px 0 0;padding:0;list-style:none}
+.stats li{display:flex;flex-direction:column;align-items:center;gap:2px}
+.stats b{font-family:var(--display);font-size:26px;font-weight:700;color:var(--ivory);font-variant-numeric:lining-nums}
+.stats span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l)}
+
+.wrap{max-width:560px;min-width:0;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 56px}
+.disc{overflow-wrap:anywhere;font-size:12.5px;color:var(--muted);margin:18px 0 0;padding:12px 14px;border:1px solid var(--line);background:var(--paper);line-height:1.45}
+.disc b{color:var(--ink);font-weight:600}
+
+/* sticky controls */
+.bar{position:sticky;top:0;z-index:5;background:rgba(245,240,230,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  margin:18px calc(-1*max(16px,env(safe-area-inset-left))) 0;padding:12px max(16px,env(safe-area-inset-left)) 10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tabs{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--ink)}
+.tabs button{font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;background:transparent;color:var(--ink);border:0;padding:12px 4px;cursor:pointer}
+.tabs button+button{border-left:1px solid var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--navy);color:var(--ivory)}
+.search{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--ink);padding:2px 2px 6px}
+.search svg{flex:none;opacity:.7}
+.search input{flex:1;min-width:0;border:0;background:transparent;font:400 16px var(--body);color:var(--ink);padding:6px 0}
+.search input::placeholder{color:#8c8890}
+.search input:focus{outline:none}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;font:500 13px var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.chips button .c{color:var(--gold);margin-left:4px;font-variant-numeric:tabular-nums}
+.chips button[aria-pressed="true"] .c{color:var(--gold-l)}
+
+/* featured (newest reel) */
+.feature{margin:26px 0 6px;display:grid;grid-template-columns:minmax(0,44%) minmax(0,1fr);gap:18px;align-items:end}
+.feature img{aspect-ratio:3/4;object-fit:cover;width:100%;height:auto;box-shadow:0 18px 40px -22px rgba(21,28,51,.6)}
+.feature .k{color:var(--gold)}
+.feature h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,6.6vw,32px);line-height:1.08;margin:8px 0 10px;text-wrap:balance}
+.feature p{margin:0 0 14px;color:var(--muted);font-size:14px}
+.lookbook{margin:22px calc(-1*max(16px,env(safe-area-inset-left))) 0;padding:0 max(16px,env(safe-area-inset-left)) 6px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(16px,env(safe-area-inset-left));scrollbar-width:none}
+.lookbook::-webkit-scrollbar{display:none}
+.lookbook a{flex:none;width:112px;scroll-snap-align:start;text-decoration:none;display:flex;flex-direction:column;gap:6px}
+.lookbook img{width:112px;height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+.lookbook a:hover img{border-color:var(--gold-l)}
+.lookbook .no{font-size:12px;color:var(--gold);letter-spacing:.1em}
+.lookbook .lb{font-size:12.5px;line-height:1.3}
+.lbh{display:flex;align-items:baseline;justify-content:space-between;margin-top:26px}
+.lbh h2{font-family:var(--display);font-weight:700;font-size:20px;margin:0}
+.lbh span{font-size:12px;color:var(--muted)}
+.fit .lk{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:center;margin-bottom:6px}
+.fit .lk h4{flex-wrap:wrap;margin:0}
+.fit .lk h4 .cm{margin-left:0;flex-basis:100%;order:3}
+.fit .lk img{width:72px;height:auto;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line)}
+.top{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:6;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-l);border:1px solid var(--gold);display:grid;place-items:center;text-decoration:none;font-size:18px;box-shadow:0 8px 20px -10px rgba(21,28,51,.7);opacity:0;pointer-events:none;transition:opacity .2s}
+.top.on{opacity:1;pointer-events:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--ivory);text-decoration:none;font:600 12px var(--body);letter-spacing:.18em;text-transform:uppercase;padding:12px 16px}
+.btn:hover{background:var(--navy-2)}
+
+/* reels as chapters */
+.list{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+.reel{background:var(--paper);border:1px solid var(--line)}
+.reel>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:78px minmax(0,1fr) 22px;gap:14px;align-items:center;padding:12px}
+.reel>summary::-webkit-details-marker{display:none}
+.reel>summary img{width:78px;height:auto;aspect-ratio:3/4;object-fit:cover}
+.reel .rn{color:var(--gold)}
+.reel h3{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.18;margin:4px 0 4px;text-wrap:balance}
+.reel .meta{font-size:13px;color:var(--muted)}
+.chev{width:22px;height:22px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:transform .2s}
+.chev::before{content:"";width:6px;height:6px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:translateY(-1px) rotate(45deg)}
+.reel[open] .chev{transform:rotate(180deg)}
+.fits{border-top:1px solid var(--line);padding:4px 0 6px}
+.fit{padding:14px 14px 6px}
+.fit+.fit{border-top:1px dashed var(--line)}
+.fit h4{margin:0 0 6px;display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25}
+.fit h4 .no{font-size:13px;color:var(--gold);letter-spacing:.12em;white-space:nowrap}
+.fit h4 .cm{margin-left:auto;font:500 10px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.items{list-style:none;margin:0;padding:0}
+.items a{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;text-decoration:none;min-height:48px;border-top:1px solid #efe8db}
+.items li:first-child a{border-top:0}
+.items .kind{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.items .name{font-size:15px;min-width:0}
+.items .go{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap}
+.items a:hover .name{text-decoration:underline;text-decoration-color:var(--gold-l);text-underline-offset:3px}
+
+/* wardrobe (by piece) */
+.cat{margin-top:26px}
+.cat h3{display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-weight:700;font-size:24px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+.cat h3 .c{margin-left:auto;font:500 12px var(--body);letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.piece{display:flex;flex-direction:column;gap:8px;background:var(--paper);border:1px solid var(--line);padding:12px;text-decoration:none;min-height:150px}
+.piece:hover{border-color:var(--gold-l)}
+.piece .kind{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.piece .name{font-family:var(--display);font-size:16px;line-height:1.25;font-weight:500}
+.piece .from{margin-top:auto;font-size:12px;color:var(--muted);line-height:1.35}
+.piece .go{font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;border-top:1px solid var(--line);padding-top:8px;display:flex;justify-content:space-between}
+.piece .go::after{content:"→";color:var(--gold)}
+
+.empty{margin:30px 0;text-align:center;color:var(--muted);font-family:var(--display);font-style:italic;font-size:18px}
+[hidden]{display:none!important}
+
+footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--ink);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:12.5px;color:var(--muted)}
+footer .logo{font-size:28px;color:var(--ink);margin:0}
+footer .logo i{color:var(--gold)}
+footer a.ig{font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold)}
+@media (max-width:360px){.items a{grid-template-columns:1fr auto}.items .kind{grid-column:1/-1;margin-bottom:-6px}.grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.piece,.chev{transition:border-color .15s,transform .2s}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="handle">oldschool.fits</div>
-    <p class="tag">Every piece from the Reels, straight to Amazon UK.</p>
-    <p class="disc">#ad · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
-    <nav aria-label="Jump to a drop"><a href="#weather">12 fits · British weather</a><a href="#cargos">1 pair of cargos = 10 fits</a><a href="#bonfire">Bonfire Night</a><a href="#decades">4 Decades</a><a href="#brands">Adidas, Nike or neither</a><a href="#work">Workwear or streetwear</a><a href="#budget">£50 vs £200</a><a href="#oldmoney">Old money fits</a></nav>
-  </header>
+<header class="mast">
+  <div class="caps eyebrow">Old-school menswear · UK</div>
+  <h1 class="logo">oldschool<i>.fits</i></h1>
+  <div class="orn" aria-hidden="true"><span></span></div>
+  <p class="lede">Every piece from the Reels, on Amazon UK.</p>
+  <ul class="stats" id="stats"></ul>
+</header>
 
-  <section class="drop" id="walk">
-    <h2>7 old money fits · the walk</h2>
-    <div id="d14"></div>
+<main class="wrap">
+  <p class="disc"><b>#ad</b> · As an Amazon Associate I earn from qualifying purchases. It costs you nothing extra. Prices and stock change, so check the price on Amazon before you buy.</p>
+
+  <div class="bar">
+    <div class="tabs" role="tablist" aria-label="Sort the shop">
+      <button role="tab" id="tab-reel" aria-selected="true" aria-controls="view-reel">By reel</button>
+      <button role="tab" id="tab-piece" aria-selected="false" aria-controls="view-piece">By piece</button>
+      <button role="tab" id="tab-style" aria-selected="false" aria-controls="view-reel">By style</button>
+    </div>
+    <label class="search" for="q">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"/></svg>
+      <input id="q" type="search" placeholder="Search: camel coat, loafers, cargos…" autocomplete="off" aria-label="Search every piece">
+    </label>
+    <div class="chips" id="chips" aria-label="Filter"></div>
+  </div>
+
+  <section id="view-reel" role="tabpanel" aria-labelledby="tab-reel">
+    <div id="feature"></div>
+    <div class="list" id="reels"></div>
   </section>
+  <section id="view-piece" role="tabpanel" aria-labelledby="tab-piece" hidden></section>
+  <p class="empty" id="empty" hidden>Nothing matches that yet. Try “coat” or “boots”.</p>
 
-  <section class="drop" id="mate">
-    <h2>Old money vs velour · me and my mate</h2>
-    <div id="d13"></div>
-  </section>
-
-  <section class="drop" id="bf">
-    <h2>Black Friday watchlist</h2>
-    <div id="d12"></div>
-  </section>
-
-  <section class="drop" id="road">
-    <h2>Italian style · Dutch roads</h2>
-    <div id="d11"></div>
-  </section>
-
-  <section class="drop" id="suit">
-    <h2>3 levels · tee, suit, overcoat</h2>
-    <div id="d10"></div>
-  </section>
-
-  <section class="drop" id="jackets">
-    <h2>Same cargos · 7 jackets</h2>
-    <div id="d9"></div>
-  </section>
-
-  <section class="drop" id="weather">
-    <h2>1 pair of cargos · 12 fits for British weather</h2>
-    <div id="d8"></div>
-  </section>
-
-  <section class="drop" id="cargos">
-    <h2>1 pair of cargos = 10 fits</h2>
-    <div id="d7"></div>
-  </section>
-
-  <section class="drop" id="bonfire">
-    <h2>Fit Drop 6 · Bonfire Night</h2>
-    <div id="d6"></div>
-  </section>
-
-  <section class="drop" id="decades">
-    <h2>Fit Drop 1 · 4 Decades</h2>
-    <div id="d1"></div>
-  </section>
-
-  <section class="drop" id="brands">
-    <h2>Fit Drop 2 · Adidas, Nike or neither?</h2>
-    <div id="d2"></div>
-  </section>
-
-  <section class="drop" id="work">
-    <h2>Fit Drop 3 · Workwear or streetwear?</h2>
-    <div id="d3"></div>
-  </section>
-
-  <section class="drop" id="budget">
-    <h2>Fit Drop 4 · £50 vs £200</h2>
-    <div id="d4"></div>
-  </section>
-
-  <section class="drop" id="oldmoney">
-    <h2>Fit Drop 5 · Old money fits</h2>
-    <div id="d5"></div>
-  </section>
-
+  <a class="top" id="top" href="#" aria-label="Back to top">↑</a>
   <footer>
-    <span>Presenter in the videos is an AI version of me.</span>
+    <div class="logo">oldschool<i>.fits</i></div>
+    <a class="ig" href="https://www.instagram.com/oldschool.fits/" target="_blank" rel="noopener">@oldschool.fits on Instagram</a>
+    <span>The presenter in the videos is an AI version of me.</span>
     <span>Links open Amazon.co.uk.</span>
   </footer>
-</div>
+</main>
 
 <script>
-const TAG = "oldschoolfits-21";
 const D1 = [
   ["1 · 70s", [["Jacket","KEFITEVD Corduroy Sherpa Lined Jacket","B0BMKRNZWR"],["Top","COOFANDY Turtleneck Knit Jumper, Dark Brown","B0H9SDW6PB"],["Trousers","Cord Trousers","B00N1WU26G"],["Shoes","Bruno Marc Chelsea Boots, Tan","B06XTW4S3N"]]],
   ["2 · 80s", [["Jacket","Agora Vanquish Windbreaker, Multi-colour","B07BLKWLK1"],["Top","Amazon Essentials Cable Knit Jumper, Off-White","B08617NXYP"],["Trousers","Straight Leg Jeans, Light Wash","B0H2QZKTR1"],["Shoes","Nike Court Vision Mid, White","B07RHQC2NY"]]],
@@ -228,28 +285,168 @@ const D8 = [
   ["11 · Friday night", [["Jacket","DECIMAL B31 Leather Jacket, Black","B09FW5N41Y"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]],
   ["12 · The weekend", [["Jacket","Leatherick Brown Leather Aviator Jacket, Shearling Style","B09JGNNF9D"],["Tee","Fruit of the Loom Super Premium T-Shirt, White","B00UXFZFGG"],["Trousers","westAce Cargo Work Trousers, Black","B09MKLPLH3"],["Shoes","New Balance 530","B09VPNBCLS"]]]
 ];
-function render(id, fits){
-  const box = document.getElementById(id);
-  box.style.display = "flex"; box.style.flexDirection = "column"; box.style.gap = "14px";
-  for (const [title, items] of fits){
-    const card = document.createElement("article"); card.className = "fit";
-    const [num, label] = title.split(" · ");
-    card.innerHTML = `<h3>${label}<span>Comment ${num}</span></h3><ul></ul>`;
-    const ul = card.querySelector("ul");
-    for (const [kind, name, asin] of items){
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = `https://www.amazon.co.uk/dp/${asin}?tag=${TAG}`;
-      a.target = "_blank"; a.rel = "sponsored noopener";
-      a.innerHTML = `<span class="kind">${kind}</span><span class="name"></span><span class="go">Shop →</span>`;
-      a.querySelector(".name").textContent = name;
-      li.appendChild(a); ul.appendChild(li);
-    }
-    box.appendChild(card);
+
+/* reels, newest first. id = the old #anchor used in captions (keep them). */
+const REELS = [
+  {id:"walk",     d:D14, n:14, t:"7 old money fits · the walk",            s:["oldmoney","tailoring"], img:"img/d14.jpg",
+   looks:{"01":"img/w01.jpg","02":"img/w02.jpg","03":"img/w03.jpg","04":"img/w04.jpg","05":"img/w05.jpg","06":"img/w06.jpg","07":"img/w07.jpg","At home":"img/w00.jpg"}},
+  {id:"mate",     d:D13, n:13, t:"Old money vs velour · me and my mate",   s:["oldmoney","tailoring"], img:"img/d13.jpg"},
+  {id:"bf",       d:D12, n:12, t:"Black Friday watchlist",                 s:["oldmoney","casual"],    img:"img/d12.jpg"},
+  {id:"road",     d:D11, n:11, t:"Italian style · Dutch roads",            s:["oldmoney","tailoring"], img:"img/d11.jpg"},
+  {id:"suit",     d:D10, n:10, t:"3 levels · tee, suit, overcoat",         s:["tailoring","oldmoney"], img:"img/d10.jpg"},
+  {id:"jackets",  d:D9,  n:9,  t:"Same cargos · 7 jackets",                s:["casual","weather"],     img:"img/d9.jpg"},
+  {id:"weather",  d:D8,  n:8,  t:"1 pair of cargos · 12 fits for British weather", s:["casual","weather"], img:"img/d8.jpg"},
+  {id:"cargos",   d:D7,  n:7,  t:"1 pair of cargos = 10 fits",             s:["casual"],               img:"img/d7.jpg"},
+  {id:"bonfire",  d:D6,  n:6,  t:"Bonfire Night · which fit?",             s:["weather","casual"],     img:"img/d6.jpg"},
+  {id:"oldmoney", d:D5,  n:5,  t:"Old money fits",                         s:["oldmoney"],             img:"img/d5.jpg"},
+  {id:"budget",   d:D4,  n:4,  t:"£50 vs £200",                            s:["budget"],               img:"img/d4.jpg"},
+  {id:"work",     d:D3,  n:3,  t:"Workwear or streetwear?",                s:["street"],               img:"img/d3.jpg"},
+  {id:"brands",   d:D2,  n:2,  t:"Adidas, Nike or neither?",               s:["street"],               img:"img/d2.jpg"},
+  {id:"decades",  d:D1,  n:1,  t:"4 decades of menswear",                  s:["retro"],                img:"img/d1.jpg"},
+];
+const STYLES = {oldmoney:"Old money", tailoring:"Tailoring", casual:"Smart casual", weather:"British weather", street:"Street & workwear", retro:"Retro decades", budget:"On a budget"};
+const CATS = [
+  ["coats",  "Coats & jackets"], ["suits", "Suits & blazers"], ["knit", "Knitwear & sweats"],
+  ["shirts", "Shirts & tees"], ["trousers", "Trousers"], ["shoes", "Shoes & boots"], ["acc", "Accessories"]
+];
+function catOf(kind, name){
+  const k = kind.toLowerCase(), n = name.toLowerCase();
+  if (/suit|blazer|tuxedo/.test(k) || (/suit|blazer/.test(n) && !/jacket|coat|sweatsuit|tracksuit/.test(n) && k==="jacket")) return "suits";
+  if (/jacket|coat|gilet|overcoat|puffer|parka/.test(k)) return "coats";
+  if (/shoe|loafer|boot|slipper|trainer|sneaker/.test(k)) return "shoes";
+  if (/trouser|jean|chino|cargo|tracksuit|lounge/.test(k)) return "trousers";
+  if (/glove|scarf|fedora|hat|cap|mask|tie|belt|watch|bag/.test(k)) return "acc";
+  if (/roll neck|jumper|quarter|knit|cardigan/.test(k)) return "knit";
+  if (/knit|jumper|cardigan|turtleneck|roll neck|sweater|half-zip|half zip|quarter|hoodie|sweatshirt|fleece|polo/.test(n)) return "knit";
+  return "shirts";
+}
+const TAG = "oldschoolfits-21";
+const url = a => `https://www.amazon.co.uk/dp/${a}?tag=${TAG}`;
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const split = t => { const i = t.indexOf(" · "); return i < 0 ? ["", t] : [t.slice(0, i), t.slice(i + 3)]; };
+
+/* flat list of every piece, deduped by ASIN for the wardrobe */
+const PIECES = new Map();
+let nFits = 0;
+for (const r of REELS) for (const [title, items] of r.d){
+  nFits++;
+  const [no, label] = split(title);
+  for (const [kind, name, asin] of items){
+    if (!PIECES.has(asin)) PIECES.set(asin, {kind, name, asin, cat: catOf(kind, name), from: []});
+    PIECES.get(asin).from.push({reel: r, no, label});
   }
 }
-render("d1", D1); render("d2", D2); render("d3", D3); render("d4", D4); render("d5", D5); render("d6", D6); render("d7", D7); render("d8", D8); render("d9", D9); render("d10", D10); render("d11", D11); render("d12", D12); render("d13", D13); render("d14", D14);
-</script>
+document.getElementById("stats").innerHTML =
+  [[REELS.length, "Reels"], [nFits, "Fits"], [PIECES.size, "Pieces"]].map(([b, s]) => `<li><b>${b}</b><span>${s}</span></li>`).join("");
 
+const two = n => String(n).padStart(2, "0");
+const fitNo = no => /^\d+$/.test(no) ? "Nº " + two(no) : (no ? no : "");
+function itemsHTML(items, q){
+  return `<ul class="items">${items.map(([kind, name, asin]) =>
+    `<li data-q="${esc((kind + " " + name).toLowerCase())}"><a href="${url(asin)}" target="_blank" rel="sponsored noopener"><span class="kind">${esc(kind)}</span><span class="name">${esc(name)}</span><span class="go">Shop</span></a></li>`).join("")}</ul>`;
+}
+function reelHTML(r, open){
+  const fits = r.d.map(([title, items]) => {
+    const [no, label] = split(title);
+    const cm = no && !no.includes(" ") ? `<span class="cm">Comment ${esc(no)}</span>` : "";
+    const h = `<h4>${no ? `<span class="no num">${esc(fitNo(no))}</span>` : ""}<span>${esc(label)}</span>${cm}</h4>`;
+    const im = r.looks && r.looks[no];
+    const fid = no ? ` id="${r.id}-${esc(no.toLowerCase().replace(/\s+/g, "-"))}"` : "";
+    return `<div class="fit"${fid}>${im ? `<div class="lk"><img src="${im}" alt="Look ${esc(no)}: ${esc(label)}" loading="lazy" width="72" height="96">${h}</div>` : h}${itemsHTML(items)}</div>`;
+  }).join("");
+  const nP = r.d.reduce((a, f) => a + f[1].length, 0);
+  return `<details class="reel" id="${r.id}" data-s="${r.s.join(" ")}"${open ? " open" : ""}>
+    <summary><img src="${r.img}" alt="" loading="lazy" width="78" height="104">
+      <div><div class="caps rn">Reel <span class="num">Nº ${two(r.n)}</span> · ${r.s.map(s => STYLES[s]).join(" · ")}</div>
+      <h3>${esc(r.t)}</h3><div class="meta">${r.d.length} ${r.d.length === 1 ? "look" : "looks"} · ${nP} pieces</div></div>
+      <span class="chev" aria-hidden="true"></span></summary>
+    <div class="fits">${fits}</div></details>`;
+}
+const F = REELS[0];
+document.getElementById("feature").innerHTML = `<div class="feature">
+  <img src="${F.img}" alt="Dave in the newest reel: ${esc(F.t)}" width="600" height="800">
+  <div><div class="caps k">New on the Reels</div><h2>${esc(F.t)}</h2>
+  <p>${F.d.length} looks, every piece linked. Comment the number on the reel and I'll send it to you.</p>
+  <a class="btn" href="#${F.id}" data-open="${F.id}">Shop the looks</a></div></div>` +
+  (F.looks ? `<div class="lbh"><h2>The lookbook</h2><span>swipe →</span></div><div class="lookbook">${F.d.map(([title]) => {
+    const [no, label] = split(title); const im = F.looks[no]; if (!im) return "";
+    const id = `${F.id}-${no.toLowerCase().replace(/\s+/g, "-")}`;
+    return `<a href="#${id}" data-open="${F.id}"><img src="${im}" alt="" loading="lazy" width="112" height="149"><span class="no num">${esc(fitNo(no))}</span><span class="lb">${esc(label)}</span></a>`;
+  }).join("")}</div>` : "");
+document.getElementById("reels").innerHTML = REELS.map((r, i) => reelHTML(r, i === 0)).join("");
+
+/* wardrobe view */
+const pv = document.getElementById("view-piece");
+pv.innerHTML = CATS.map(([c, label]) => {
+  const ps = [...PIECES.values()].filter(p => p.cat === c);
+  if (!ps.length) return "";
+  return `<section class="cat" data-cat="${c}"><h3>${label}<span class="c">${ps.length}</span></h3><div class="grid">${ps.map(p => {
+    const f = p.from[0];
+    const more = p.from.length > 1 ? ` + ${p.from.length - 1} more` : "";
+    return `<a class="piece" href="${url(p.asin)}" target="_blank" rel="sponsored noopener" data-q="${esc((p.kind + " " + p.name + " " + p.from.map(x => x.reel.t + " " + x.label).join(" ")).toLowerCase())}">
+      <span class="kind">${esc(p.kind)}</span><span class="name">${esc(p.name)}</span>
+      <span class="from">In “${esc(f.reel.t)}”${f.no && /^\d+$/.test(f.no) ? ", look " + two(f.no) : ""}${more}</span><span class="go">Shop on Amazon</span></a>`;
+  }).join("")}</div></section>`;
+}).join("");
+
+/* controls */
+const tabs = {reel: document.getElementById("tab-reel"), piece: document.getElementById("tab-piece"), style: document.getElementById("tab-style")};
+const chips = document.getElementById("chips"), q = document.getElementById("q"), empty = document.getElementById("empty");
+const rv = document.getElementById("view-reel"), feat = document.getElementById("feature");
+let mode = "reel", filt = "all";
+function chipSet(list){
+  chips.innerHTML = list.map(([k, l, c]) => `<button type="button" data-k="${k}" aria-pressed="${k === filt}">${l}<span class="c">${c}</span></button>`).join("");
+}
+function drawChips(){
+  if (mode === "piece") chipSet([["all", "All", PIECES.size], ...CATS.map(([c, l]) => [c, l, [...PIECES.values()].filter(p => p.cat === c).length]).filter(x => x[2])]);
+  else if (mode === "style") chipSet([["all", "All", REELS.length], ...Object.entries(STYLES).map(([k, l]) => [k, l, REELS.filter(r => r.s.includes(k)).length])]);
+  else chips.innerHTML = "", chips.hidden = true;
+  chips.hidden = mode === "reel";
+}
+function apply(){
+  const term = q.value.trim().toLowerCase();
+  let shown = 0;
+  if (mode === "piece"){
+    for (const sec of pv.querySelectorAll(".cat")){
+      let n = 0;
+      const okCat = filt === "all" || sec.dataset.cat === filt;
+      for (const p of sec.querySelectorAll(".piece")){ const ok = okCat && (!term || p.dataset.q.includes(term)); p.hidden = !ok; n += ok; }
+      sec.hidden = !n; shown += n;
+    }
+  } else {
+    feat.hidden = !!term || (mode === "style" && filt !== "all");
+    for (const r of document.querySelectorAll(".reel")){
+      const okS = mode !== "style" || filt === "all" || r.dataset.s.split(" ").includes(filt);
+      let n = 0;
+      for (const li of r.querySelectorAll(".items li")){ const ok = !term || li.dataset.q.includes(term); li.hidden = !ok; n += ok; }
+      for (const f of r.querySelectorAll(".fit")) f.hidden = !!term && !f.querySelector("li:not([hidden])");
+      const ok = okS && n > 0; r.hidden = !ok; shown += ok;
+      if (term && ok) r.open = true;
+    }
+  }
+  empty.hidden = shown > 0;
+}
+function setMode(m){
+  mode = m; filt = "all";
+  for (const [k, b] of Object.entries(tabs)) b.setAttribute("aria-selected", k === m);
+  rv.hidden = m === "piece"; pv.hidden = m !== "piece";
+  drawChips(); apply();
+}
+for (const [k, b] of Object.entries(tabs)) b.addEventListener("click", () => setMode(k));
+chips.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; filt = b.dataset.k; drawChips(); apply(); });
+q.addEventListener("input", apply);
+
+/* deep links from captions: #walk, #mate, ... open that reel */
+function openHash(){
+  const id = location.hash.slice(1); const el = id && document.getElementById(id);
+  const reel = el && el.closest(".reel");
+  if (reel){ if (mode === "piece") setMode("reel"); reel.open = true; requestAnimationFrame(() => el.scrollIntoView()); }
+}
+document.addEventListener("click", e => { const a = e.target.closest("[data-open]"); if (a){ const el = document.getElementById(a.dataset.open); el.open = true; } });
+window.addEventListener("hashchange", openHash);
+const topBtn = document.getElementById("top");
+addEventListener("scroll", () => topBtn.classList.toggle("on", scrollY > 900), {passive: true});
+drawChips(); openHash();
+</script>
 </body>
 </html>
